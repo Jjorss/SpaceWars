@@ -1,13 +1,12 @@
 class Enemy {
   constructor(){
-    this.model = new EnemyModel(getRandomInt(0, canvas.width*0.9), 0);
+    this.model = new EnemyModel(getRandomInt(0, canvas.width*0.9),-1*getRandomInt(0, 500));
     this.view = new EnemyView(this.model.width, this.model.height);
   }
 }
 class Meteor {
   constructor() {
-    this.model = new MeteorModel(getRandomInt(0, canvas.width*0.9),
-    -1*getRandomInt(100, 500),
+    this.model = new MeteorModel(getRandomInt(0, canvas.width*0.9), -1*getRandomInt(100, 500),
     this.randomDx());
     this.view = new MeteorView(this.model.width, this.model.height);
   }
@@ -26,6 +25,14 @@ class PowerUp {
     this.view = new PowerUpView(this.model.width, this.model.height);
   }
 }
+class Star {
+  constructor(type) {
+    this.model = new StarModel(getRandomInt(0, canvas.width*0.9), -1*getRandomInt(0, 1000), type);
+    this.view = new StarView(this.model.width, this.model.height);
+  }
+
+}
+
 class GameController {
   constructor() {
     this.playerM = new PlayerModel(canvas.width/2, canvas.height/2);
@@ -34,6 +41,7 @@ class GameController {
     this.enemies = [];
     this.meteors = [];
     this.powerUps = [];
+    this.stars = [];
     document.addEventListener('keydown', function check(e) {
         let code = e.keyCode;
         switch (code) {
@@ -131,16 +139,23 @@ class GameController {
   }
 
   spawnPowerUp(x, y) {
-    if(Math.random() >= 0.9) {
+    if(Math.random() >= 0.8) {
       console.log("spawned");
-      powerUps.push(new PowerUp(x, y));
+      this.powerUps.push(new PowerUp(x, y));
     }
   }
 
   spawnEnemies() {
-    if(this.enemies.length < 8) {
+    if(this.enemies.length < 10) {
       //console.log("new enemy");
       this.enemies.push(new Enemy());
+    }
+  }
+
+  spawnStars(type) {
+    if(this.stars.length < 200) {
+      //console.log("new star");
+      this.stars.push(new Star(type));
     }
   }
 
@@ -154,11 +169,22 @@ class GameController {
     let newE = [];
     let newMet = [];
     let newPow = [];
+    let newS = [];
     this.enemies.forEach((e) =>{
       if(e.model.status) {
         newE.push(e);
       }
     });
+
+    this.stars.forEach((s) => {
+      if(s.model.status) {
+        newS.push(s);
+      } else {
+        let ns = new Star(s.type);
+        newS.push(ns);
+      }
+    });
+
     this.meteors.forEach((m) => {
       if(m.model.status) {
         newMet.push(m);
@@ -172,6 +198,7 @@ class GameController {
     this.powerUps = newPow;
     this.meteors = newMet;
     this.enemies = newE;
+    this.stars = newS;
   }
 
   calcScore() {
@@ -184,10 +211,14 @@ class GameController {
     if(this.playerM.health > 0) {
       this.playerM.update();
       this.spawnEnemies();
+      this.spawnStars(0);
       this.spawnMeteors();
       this.enemies.forEach((e)=> {
         e.model.update();
       });
+      this.stars.forEach((s)=> {
+        s.model.update();
+      })
       this.meteors.forEach((m) => {
         m.model.update();
       });
@@ -202,7 +233,8 @@ class GameController {
 
   render() {
     //console.log(this);
-
+    this.hud.render(this.playerM.shield, this.playerM.health, SCORE);
+    ctx.globalCompositeOperation="destination-over";
     this.playerV.render(this.playerM.x, this.playerM.y, this.playerM.missiles);
     this.enemies.forEach((e)=> {
       e.view.render(e.model.x, e.model.y, e.model.missiles);
@@ -213,8 +245,10 @@ class GameController {
     this.powerUps.forEach((p) => {
       p.view.render(p.model.x, p.model.y);
     });
-
-    this.hud.render(this.playerM.shield, this.playerM.health, SCORE);
+    this.stars.forEach((s)=> {
+      s.view.render(s.model.x, s.model.y);
+    });
+    ctx.globalCompositeOperation="destination-over";
 
   }
 
