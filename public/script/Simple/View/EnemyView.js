@@ -12,7 +12,7 @@ class EnemyView  {
     ctx.drawImage(this.img, x, y, this.width, this.height);
     missiles.forEach((m) => {
       if(m.status) {
-        this.missileV.render(m.x, m.y)
+        this.missileV.render(m.x, m.y, this.height*0.5);
       }
     });
   }

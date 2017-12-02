@@ -169,7 +169,7 @@ class GameController {
   }
 
   spawnStars(type) {
-    if(this.stars.length < 200) {
+    if(this.stars.length < 100) {
       //console.log("new star");
       this.stars.push(new Star(type));
     }
