@@ -507,3 +507,31 @@
 [info] +  hosting: Local server: http://localhost:5000
 
 [info] Shutting down...
+[debug] [2017-12-02T21:22:22.091Z] ----------------------------------------------------------------------
+[debug] [2017-12-02T21:22:22.091Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Chris\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-02T21:22:22.091Z] CLI Version:   3.15.4
+[debug] [2017-12-02T21:22:22.091Z] Platform:      win32
+[debug] [2017-12-02T21:22:22.091Z] Node Version:  v8.9.1
+[debug] [2017-12-02T21:22:22.091Z] Time:          Sat Dec 02 2017 16:22:22 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-02T21:22:22.091Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-02T21:22:22.107Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-02T21:22:22.107Z] > authorizing via signed-in user
+[debug] [2017-12-02T21:22:22.109Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+ Sat Dec 02 2017 16:22:22 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-02T21:22:22.575Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-02T21:22:22.575Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+ Sat Dec 02 2017 16:22:22 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-02T21:22:23.039Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Chris\Documents\COLLEGE_DOCUMENTS\2017_2018\FALL\SpaceWars'...
+[info] 
+[debug] [2017-12-02T21:22:23.039Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+ Sat Dec 02 2017 16:22:23 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-02T21:22:23.339Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-02T21:22:23.339Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+ Sat Dec 02 2017 16:22:23 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-02T21:22:23.623Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

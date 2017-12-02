@@ -38,7 +38,7 @@ class StartMenuController {
 
   render() {
     this.meteors.forEach((m) => {
-      m.view.render(m.model.x, m.model.y);
+      m.view.render(m.model.x, m.model.y, m.model.health);
     });
     ctx.globalCompositeOperation="destination-over";
     this.stars.forEach((s) => {

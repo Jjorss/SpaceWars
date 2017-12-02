@@ -256,7 +256,7 @@ class GameController {
       e.view.render(e.model.x, e.model.y, e.model.missiles);
     });
     this.meteors.forEach((m) => {
-      m.view.render(m.model.x, m.model.y);
+      m.view.render(m.model.x, m.model.y, m.model.health);
     });
     this.powerUps.forEach((p) => {
       p.view.render(p.model.x, p.model.y);
