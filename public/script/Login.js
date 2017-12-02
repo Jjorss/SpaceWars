@@ -63,11 +63,11 @@ let listener = firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-window.onbeforeunload = closingCode;
-function closingCode(){
-  firebase.auth().signOut().then(function() {
-   // Sign-out successful.
-  }).catch(function(error) {
-   // An error happened.
-  });
-}
+// window.onbeforeunload = closingCode;
+// function closingCode(){
+//   firebase.auth().signOut().then(function() {
+//    // Sign-out successful.
+//   }).catch(function(error) {
+//    // An error happened.
+//   });
+// }

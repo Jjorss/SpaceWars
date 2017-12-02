@@ -28,9 +28,6 @@ class PowerUp {
 }
 class GameController {
   constructor() {
-    this.SCORE = 0;
-    this.KILLS = 0;
-    this.MISTAKES = 0;
     this.playerM = new PlayerModel(canvas.width/2, canvas.height/2);
     this.playerV = new PlayerView(this.playerM.width, this.playerM.height);
     this.hud = new Hud();
@@ -178,7 +175,8 @@ class GameController {
   }
 
   calcScore() {
-    this.SCORE = this.KILLS - this.MISTAKES;
+    SCORE = KILLS - MISTAKES;
+    console.log("mis: ", MISTAKES);
   }
 
   update() {
@@ -216,7 +214,7 @@ class GameController {
       p.view.render(p.model.x, p.model.y);
     });
 
-    this.hud.render(this.playerM.shield, this.playerM.health, this.SCORE);
+    this.hud.render(this.playerM.shield, this.playerM.health, SCORE);
 
   }
 
@@ -240,7 +238,7 @@ class GameController {
         if(e.model.status && m.status && this.isCollided(e.model, m)) {
           e.model.status = 0;
           m.status = 0;
-          this.KILLS++;
+          KILLS++;
         }
       });
     });
