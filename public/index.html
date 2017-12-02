@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portal</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./css/canvas.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <link rel="stylesheet" type="text/css" href="./css/end.css">
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBBaFvN1yNhAhFdcoSlDIjvOBnFvqr92bc",
+        authDomain: "myportal-d3b10.firebaseapp.com",
+        databaseURL: "https://myportal-d3b10.firebaseio.com",
+        projectId: "myportal-d3b10",
+        storageBucket: "myportal-d3b10.appspot.com",
+        messagingSenderId: "357058346963"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+  </head>
+  <body id='body'>
+    <!-- <div class="container-fluid" style="background-color: salmon; height:10%; display:none;">
+      <div class="row">
+        <h1 style="display: inline;">nav</h1>
+        <h2 id="fps" style="display: inline;"></h2>
+      </div>
+    </div> -->
+    <canvas id="myCanvas"></canvas>
+    <div id="end" style="display: none;">
+
+    </div>
+    <div class="startMenu" id="startMenu">
+      <div class="menu">
+        <p id="welcome">Please login to play!</p>
+        <button id="loginBtn" class="btn">Login</button>
+        <button id="startBtn" class="btn">Start Game</button>
+        <button class="btn">Creadits</button>
+      </div>
+    </div>
+
+    <script src="/script/Simple/Model/PlayerModel.js"></script>
+    <script src="/script/Simple/Model/MissileModel.js"></script>
+    <script src="/script/Simple/Model/EnemyModel.js"></script>
+    <script src="/script/Simple/Model/EMissileModel.js"></script>
+    <script src="/script/Simple/Model/MeteorModel.js"></script>
+    <script src="/script/Simple/Model/PowerUpModel.js"></script>
+
+    <script src="/script/Simple/View/MissileView.js"></script>
+    <script src="/script/Simple/View/PlayerView.js"></script>
+    <script src="/script/Simple/View/EnemyView.js"></script>
+    <script src="/script/Simple/View/EMissileView.js"></script>
+    <script src="/script/Simple/View/MeteorView.js"></script>
+    <script src="/script/Simple/View/Hud.js"></script>
+    <script src="/script/Simple/View/PowerUpView.js"></script>
+
+    <script src="/script/Simple/Controller/GameController.js"></script>
+    <script src="/script/Simple/Controller/StartMenuController.js"></script>
+    <script src="/script/Simple/Canvas.js"></script>
+
+    <script src="/script/Login.js"></script>
+  <!--   <div class="login-page" id="login">
+      <div class="form">
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+        </form>
+        <button id="loginBtn">login with Google</button>
+      </div>
+    </div>
+
+
+
+    <a href='https://www.freepik.com/free-vector/colorful-comic-label-collection_1389351.htm'>Designed by Freepik</a> -->
+
+    <!-- <script src="/script/canvas.js"></script> -->
+    <!-- <script src="/script/ModelViewController/Model/Abstract/Entity.js"></script>
+
+    <script src="/script/ModelViewController/Model/PlayerModel.js"></script>
+    <script src="/script/ModelViewController/Model/EnemyShipModel.js"></script>
+    <script src="/script/ModelViewController/Model/MissileModel.js"></script>
+
+    <script src="/script/ModelViewController/View/PlayerView.js"></script>
+    <script src="/script/ModelViewController/View/EnemyShipView.js"></script>
+    <script src="/script/ModelViewController/View/MissileView.js"></script>
+
+    <script src="/script/ModelViewController/Controller/PlayerController.js"></script>
+    <script src="/script/ModelViewController/Controller/EnemyShipController.js"></script>
+    <script src="/script/ModelViewController/Controller/EnemiesController.js"></script>
+    <script src="/script/ModelViewController/Controller/EntityController.js"></script>
+    <script src="/script/ModelViewController/Controller/MissileController.js"></script>
+    <script src="/script/ModelViewController/Controller/MissilesController.js"></script>
+    <script src="/script/ModelViewController/Controller/canvas.js"></script> -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+  			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  			  crossorigin="anonymous"></script> -->
+  </body>
+</html>
