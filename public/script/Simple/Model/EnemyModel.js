@@ -14,7 +14,7 @@ class EnemyModel {
   spawnMissile() {
     if(Math.random() >= 0.99) {
       if(Math.random() >= 0.3) {
-        this.missiles.push(new EMissileModel(this.x, this.y));
+        this.missiles.push(new EMissileModel(this.x, this.y, 1));
       }
     }
   }

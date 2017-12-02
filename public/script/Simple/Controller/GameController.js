@@ -4,6 +4,13 @@ class Enemy {
     this.view = new EnemyView(this.model.width, this.model.height);
   }
 }
+class Sniper {
+  constructor(playerM){
+    this.model = new SniperModel(getRandomInt(0, canvas.width*0.9), 0, playerM);
+    //console.log(this.playerM)
+    this.view = new SniperView(this.model.width, this.model.height, this.model.missHeight);
+  }
+}
 class Meteor {
   constructor() {
     this.model = new MeteorModel(getRandomInt(0, canvas.width*0.9),
@@ -140,7 +147,16 @@ class GameController {
   spawnEnemies() {
     if(this.enemies.length < 8) {
       //console.log("new enemy");
-      this.enemies.push(new Enemy());
+      //this.enemies.push(new Enemy());
+      if(KILLS > 20) {
+        if(Math.random() > 0.8) {
+          this.enemies.push(new Sniper(this.playerM));
+        } else {
+          this.enemies.push(new Enemy());
+        }
+      } else {
+        this.enemies.push(new Enemy());
+      }
     }
   }
 
@@ -176,7 +192,7 @@ class GameController {
 
   calcScore() {
     SCORE = KILLS - MISTAKES;
-    console.log("mis: ", MISTAKES);
+    //console.log("mis: ", MISTAKES);
   }
 
   update() {

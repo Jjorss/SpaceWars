@@ -6,9 +6,9 @@ class EMissileView {
     this.height = height;
   }
 
-  render(x, y){
-    //console.log(this.img, x,y, this.width, this.height);
-    ctx.drawImage(this.img, x, y, this.width, this.height);
+  render(x, y, height){
+    //console.log(this.width, this.height);
+    ctx.drawImage(this.img, x, y, this.width, height);
   }
 
 }
