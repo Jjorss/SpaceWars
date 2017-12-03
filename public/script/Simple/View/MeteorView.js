@@ -11,7 +11,6 @@ class MeteorView  {
   }
 
   render(x, y, health){
-    console.log(health);
     if  (health == 3) {
       ctx.drawImage(this.img1, x, y, this.width, this.height);
     } else if (health == 2) {
