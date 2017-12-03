@@ -607,3 +607,32 @@
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 
+[debug] [2017-12-03T01:15:50.092Z] ----------------------------------------------------------------------
+[debug] [2017-12-03T01:15:50.092Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-03T01:15:50.092Z] CLI Version:   3.15.2
+[debug] [2017-12-03T01:15:50.092Z] Platform:      win32
+[debug] [2017-12-03T01:15:50.092Z] Node Version:  v8.9.1
+[debug] [2017-12-03T01:15:50.092Z] Time:          Sat Dec 02 2017 20:15:50 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-03T01:15:50.092Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-03T01:15:50.107Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-03T01:15:50.107Z] > authorizing via signed-in user
+[debug] [2017-12-03T01:15:50.107Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+ Sat Dec 02 2017 20:15:50 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-03T01:15:50.491Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-03T01:15:50.491Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+ Sat Dec 02 2017 20:15:50 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-03T01:15:50.923Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-03T01:15:50.923Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+ Sat Dec 02 2017 20:15:50 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-03T01:15:51.207Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-03T01:15:51.207Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+ Sat Dec 02 2017 20:15:51 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-03T01:15:51.525Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...

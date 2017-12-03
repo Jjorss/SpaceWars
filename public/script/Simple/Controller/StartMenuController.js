@@ -7,6 +7,8 @@ class StartMenuController {
     }.bind(this));
     this.meteors = [];
     this.stars = [];
+    this.fontSize = 25;
+    this.fsd = 1;
   }
 
   spawnMeteors(max) {
@@ -32,7 +34,14 @@ class StartMenuController {
     this.stars.forEach((s) => {
       s.model.update();
     });
-
+    if(this.fontSize >= 72) {
+      this.fsd*=-1;
+    }
+    if(this.fontSize<=24) {
+      this.fsd*=-1;
+    }
+    this.fontSize+=this.fsd;
+    console.log(this.fontSize);
     this.collectGarbage();
   }
 
@@ -44,6 +53,10 @@ class StartMenuController {
     this.stars.forEach((s) => {
       s.view.render(s.model.x, s.model.y);
     });
+    ctx.font = `${this.fontSize}px sans-serif`;
+    ctx.fillStyle = 'white';
+    ctx.textAlign = "center";
+    ctx.fillText("Space Wars!", (canvas.width/2), canvas.height*0.1);
   }
 
   handleClick(event) {
