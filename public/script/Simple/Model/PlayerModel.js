@@ -15,7 +15,7 @@ class PlayerModel {
     this.canFire = true;
     this.missiles = [];
     this.health = 3;
-    this.shield = 0;
+    this.shield = 100;
   }
 
 
