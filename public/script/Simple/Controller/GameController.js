@@ -37,7 +37,12 @@ class Star {
     this.model = new StarModel(getRandomInt(0, canvas.width*0.9), -1*getRandomInt(0, 1000), type);
     this.view = new StarView(this.model.width, this.model.height);
   }
-
+}
+class Explosion {
+  constructor(x, y, type) {
+    this.model = new ExplosionModel(x, y, type);
+    this.view = new ExplosionView(this.model.width, this.model.height);
+  }
 }
 
 class GameController {
@@ -49,6 +54,7 @@ class GameController {
     this.meteors = [];
     this.powerUps = [];
     this.stars = [];
+    this.explosions = [];
     document.addEventListener('keydown', function check(e) {
         let code = e.keyCode;
         switch (code) {
@@ -175,6 +181,10 @@ class GameController {
     }
   }
 
+  spawnExplosion(x, y, type) {
+    this.explosions.push(new Explosion(type));
+  }
+
   spawnMeteors() {
     if(this.meteors.length < 4) {
       this.meteors.push(new Meteor());
@@ -186,6 +196,7 @@ class GameController {
     let newMet = [];
     let newPow = [];
     let newS = [];
+    let newEx = [];
     this.enemies.forEach((e) =>{
       if(e.model.status) {
         newE.push(e);
@@ -211,10 +222,16 @@ class GameController {
         newPow.push(p);
       }
     });
+    this.explosions.forEach((ex) => {
+      if(ex.model.status) {
+        newEx.push(ex);
+      }
+    });
     this.powerUps = newPow;
     this.meteors = newMet;
     this.enemies = newE;
     this.stars = newS;
+    this.explosions = newEx;
   }
 
   calcScore() {
@@ -241,6 +258,9 @@ class GameController {
       this.powerUps.forEach((p) => {
         p.model.update();
       });
+      this.explosions.forEach((ex) => {
+        ex.model.update();
+      });
       this.checkCollision();
       this.collectGarbage();
       this.calcScore();
@@ -254,7 +274,6 @@ class GameController {
   }
 
   render() {
-    //console.log(this);
     this.hud.render(this.playerM.shield, this.playerM.health, SCORE);
     ctx.globalCompositeOperation="destination-over";
     this.playerV.render(this.playerM.x, this.playerM.y, this.playerM.missiles);
@@ -262,7 +281,7 @@ class GameController {
       e.view.render(e.model.x, e.model.y, e.model.missiles);
     });
     this.meteors.forEach((m) => {
-      m.view.render(m.model.x, m.model.y);
+      m.view.render(m.model.x, m.model.y, m.model.health);
     });
     this.powerUps.forEach((p) => {
       p.view.render(p.model.x, p.model.y);
@@ -270,7 +289,11 @@ class GameController {
     this.stars.forEach((s)=> {
       s.view.render(s.model.x, s.model.y);
     });
+    this.explosions.forEach((ex) => {
+      ex.view.render(ex.model.x, ex.model.y, ex.model.type, ex.model.opacity)
+    })
     ctx.globalCompositeOperation="destination-over";
+    //NOTE: globalCompositeOperation = "source-over"
 
   }
 
@@ -279,6 +302,7 @@ class GameController {
       if(e.model.status && this.isCollided(e.model, this.playerM)) {
         e.model.status = 0;
         this.playerM.health--;
+        this.explosions.push(new Explosion(this.playerM.x, this.playerM.y, 1));
       }
       e.model.missiles.forEach((m) =>{
         if(m.status && this.isCollided(m, this.playerM)){
@@ -286,6 +310,7 @@ class GameController {
             this.playerM.shield-=10;
           } else {
             this.playerM.health--;
+            this.explosions.push(new Explosion(this.playerM.x, this.playerM.y, 1));
           }
           m.status = 0;
         }
@@ -295,6 +320,7 @@ class GameController {
           e.model.status = 0;
           m.status = 0;
           KILLS++;
+          this.explosions.push(new Explosion(e.model.x, e.model.y, 2));
         }
       });
     });
@@ -302,12 +328,15 @@ class GameController {
       if(m.model.status && this.isCollided(m.model, this.playerM)){
         m.model.status = 0;
         this.playerM.health--;
+        this.explosions.push(new Explosion(this.playerM.x, this.playerM.y, 1));
+        this.explosions.push(new Explosion(m.model.x, m.model.y, 2));
       }
       this.playerM.missiles.forEach((miss)=>{
         if(miss.status && m.model.status && this.isCollided(miss, m.model)) {
           miss.status = 0;
           m.model.health--;
           if(m.model.health <= 0) {
+            this.explosions.push(new Explosion(m.model.x, m.model.y, 2));
             this.spawnPowerUp(m.model.x, m.model.y);
           }
         }
