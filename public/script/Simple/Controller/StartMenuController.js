@@ -7,6 +7,9 @@ class StartMenuController {
     }.bind(this));
     this.meteors = [];
     this.stars = [];
+    while (this.stars.length < 100) {
+      this.spawnStars(100, true);
+    }
     this.fontSize = 25;
     this.fsd = 1;
   }
@@ -18,16 +21,16 @@ class StartMenuController {
     }
   }
 
-  spawnStars(max) {
+  spawnStars(max, atVeryStart) {
     if(this.stars.length < max) {
-      this.stars.push(new Star(0));
+      this.stars.push(new Star(0, atVeryStart));
       //console.log("spawned");
     }
   }
 
   update() {
     this.spawnMeteors(8);
-    this.spawnStars(200);
+    this.spawnStars(200, false);
     this.meteors.forEach((m) => {
       m.model.update();
     });
@@ -82,6 +85,5 @@ class StartMenuController {
     this.meteors = newM;
     this.stars = newS;
   }
-
 
 }

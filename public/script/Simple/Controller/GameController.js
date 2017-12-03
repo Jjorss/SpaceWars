@@ -33,9 +33,17 @@ class PowerUp {
   }
 }
 class Star {
-  constructor(type) {
-    this.model = new StarModel(getRandomInt(0, canvas.width*0.9), -1*getRandomInt(0, 1000), type);
+  constructor(type, atVeryStart) {
+    this.model = new StarModel(getRandomInt(0, canvas.width*0.9), this.randomY(atVeryStart), type);
     this.view = new StarView(this.model.width, this.model.height);
+  }
+
+  randomY(atVeryStart){
+    if (atVeryStart) {
+      return (getRandomInt(0, canvas.height));
+    } else {
+      return (-1*getRandomInt(0, 1000));
+    }
   }
 }
 class Explosion {
@@ -54,6 +62,9 @@ class GameController {
     this.meteors = [];
     this.powerUps = [];
     this.stars = [];
+    while (this.stars.length < 100) {
+      this.spawnStars(100, true);
+    }
     this.explosions = [];
     document.addEventListener('keydown', function check(e) {
         let code = e.keyCode;
@@ -174,10 +185,10 @@ class GameController {
     }
   }
 
-  spawnStars(type) {
+  spawnStars(type, atVeryStart) {
     if(this.stars.length < 100) {
       //console.log("new star");
-      this.stars.push(new Star(type));
+      this.stars.push(new Star(type, atVeryStart));
     }
   }
 
@@ -244,7 +255,7 @@ class GameController {
     if(this.playerM.health > 0) {
       this.playerM.update();
       this.spawnEnemies();
-      this.spawnStars(0);
+      this.spawnStars(0, false);
       this.spawnMeteors();
       this.enemies.forEach((e)=> {
         e.model.update();

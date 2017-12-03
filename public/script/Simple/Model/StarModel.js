@@ -4,8 +4,12 @@ class StarModel {
     this.y = y;
     this.dx = 0 * SCALE;//canvas.height * 0.01;
     this.type = 0;
-    if (type == 0) this.randomStarScale = this.randomizeStarScale();
-    else this.randomStarScale = this.replicateStarScale(type);
+    if (type == 0) {
+      this.randomStarScale = this.randomizeStarScale();
+    }
+    else {
+      this.randomStarScale = this.replicateStarScale(type);
+    };
     this.dy = canvas.height * 0.003 * SCALE * this.randomStarScale;
     this.width = canvas.height * 0.07 * SCALE * this.randomStarScale;
     this.height = canvas.height*0.07 * SCALE * this.randomStarScale;

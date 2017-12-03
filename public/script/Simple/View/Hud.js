@@ -8,6 +8,7 @@ class Hud {
   }
 
   render(shield, lives, score) {
+    ctx.textAlign = "start";
     this.drawSheild(shield);
     this.drawHealth(lives);
     this.drawKills(score);
