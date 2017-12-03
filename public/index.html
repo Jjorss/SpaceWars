@@ -47,12 +47,21 @@
     <div id="end" style="display: none;">
 
     </div>
-    <div class="startMenu" id="startMenu">
+    <div class="menuWrapper" id="startMenu">
       <div class="menu">
         <p id="welcome">Please login to play!</p>
+        <p id="leader">Getting leader info...</p>
         <button id="loginBtn" class="btn">Login</button>
         <button id="startBtn" class="btn">Start Game</button>
         <button class="btn">Creadits</button>
+      </div>
+    </div>
+
+    <div class="menuWrapper" id="endMenu">
+      <div class="menu">
+        <p>Your score is...</p>
+        <p>Personal Best...</p>
+        <p>The High Score is: ...</p>
       </div>
     </div>
 
@@ -77,6 +86,7 @@
 
     <script src="/script/Simple/Controller/GameController.js"></script>
     <script src="/script/Simple/Controller/StartMenuController.js"></script>
+    <script src="/script/Simple/Controller/EndMenuController.js"></script>
     <script src="/script/Simple/Canvas.js"></script>
 
     <script src="/script/Login.js"></script>

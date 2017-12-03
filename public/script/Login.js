@@ -56,12 +56,24 @@ let listener = firebase.auth().onAuthStateChanged(function(user) {
       uid = user.uid;
       document.getElementById('startBtn').style.display = "inline";
       document.getElementById('welcome').innerHTML = "Welcome " + name + "!";
+      setLeader();
       console.log("working");
-      //setUID(uid);
+      UID = uid;
+      console.log(UID);
+
       //startGame();
     }
   }
 });
+
+let setLeader = function() {
+  firebase.database().ref("leader/").once('value').then(function(snap) {
+    let leader = snap.val();
+    let score = leader.highScore;
+    let name = leader.name;
+    document.getElementById('leader').innerHTML= `Current leader is ${name} with ${score}`;
+  });
+}
 
 // window.onbeforeunload = closingCode;
 // function closingCode(){

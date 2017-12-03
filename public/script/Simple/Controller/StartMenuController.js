@@ -1,8 +1,8 @@
 class StartMenuController {
   constructor() {
     document.addEventListener('click', function(event) {
-      console.log("Clicked");
-      console.log(event);
+      //console.log("Clicked");
+      //console.log(event);
       this.handleClick(event);
     }.bind(this));
     this.meteors = [];
@@ -12,14 +12,14 @@ class StartMenuController {
   spawnMeteors(max) {
     if(this.meteors.length < max) {
       this.meteors.push(new Meteor());
-      console.log("spawned");
+      //console.log("spawned");
     }
   }
 
   spawnStars(max) {
     if(this.stars.length < max) {
       this.stars.push(new Star(0));
-      console.log("spawned");
+      //console.log("spawned");
     }
   }
 

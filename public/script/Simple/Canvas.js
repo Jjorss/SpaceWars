@@ -6,6 +6,7 @@ const SCALE = 0.75;
 let SCORE = 0;
 let KILLS = 0;
 let MISTAKES = 0;
+let UID;
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,6 +16,7 @@ let GameState = "Start Menu";
 
 let game = new GameController();
 let startMenu = new StartMenuController();
+
 game.init();
 
 let render = function() {
@@ -27,6 +29,7 @@ let render = function() {
         game.render();
         break;
       case "End Menu":
+        game.render();
         break;
       default:
         console.log("Broken State");

@@ -244,6 +244,12 @@ class GameController {
       this.checkCollision();
       this.collectGarbage();
       this.calcScore();
+    } else {
+      console.log(UID);
+      let endMenu = new EndMenuController(UID);
+      endMenu.generateMenu();
+      GameState = "End Menu";
+      document.getElementById("endMenu").style.display = "block";
     }
   }
 

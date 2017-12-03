@@ -15,7 +15,11 @@ canvas {
     background: #212121;
 }
 
-.startMenu {
+#endMenu {
+  display: none;
+}
+
+.menuWrapper {
   width: 360px;
   padding: 10% 0 0;
   margin: auto;
