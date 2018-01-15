@@ -27,6 +27,11 @@ class SniperModel {
     //console.log("updating");
   }
 
+  updateHealth() {
+    this.status = 0;
+    KILLS++;
+  }
+
   borderDetection() {
     if(this.x >= canvas.width - this.width) {
       this.x -= this.dx;
@@ -94,7 +99,7 @@ class SniperModel {
   countDown() {
     this.interval = setInterval(function(){
       this.handleCountDown()
-    }.bind(this), 1000);
+    }.bind(this), 100);
   }
 
   handleCountDown() {

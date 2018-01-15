@@ -1,12 +1,14 @@
 class MissileModel {
-  constructor(x, y) {
+  constructor(x, y, dx, dy, simple) {
     this.x = x;
     this.y = y;
-    this.dx = 0;
-    this.dy = -1*canvas.height * 0.025 * SCALE;
+    this.speed = canvas.height * 0.05 * SCALE;
+    this.dx = dx;
+    this.dy = dy;
     this.width = canvas.height * 0.05 * SCALE;
     this.height = canvas.height*0.05 * SCALE;
     this.status = 1;
+    this.simple = simple;
   }
 
   update() {
@@ -21,8 +23,12 @@ class MissileModel {
   }
 
   move() {
-    this.x+=this.dx;
-    this.y+=this.dy;
+    if(this.simple) {
+      this.y -= this.speed;
+    } else {
+      this.x+= this.speed * this.dx;
+      this.y+= this.speed * this.dy;
+    }
   }
 
 }

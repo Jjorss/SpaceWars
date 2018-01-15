@@ -30,6 +30,11 @@ class EnemyModel {
     //console.log("updating");
   }
 
+  updateHealth() {
+    this.status = 0;
+    KILLS++;
+  }
+
   borderDetection() {
     if(this.x >= canvas.width - this.width) {
       this.x -= this.dx;

@@ -41,7 +41,7 @@ class EMissileModel {
 
   sniperMove() {
     if(this.height < this.maxHeight) {
-      console.log(this.height);
+      //console.log(this.height);
       this.height+=this.dy;
     } else {
       this.x+=this.dx;

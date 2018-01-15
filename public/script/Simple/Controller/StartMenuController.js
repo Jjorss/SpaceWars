@@ -44,7 +44,7 @@ class StartMenuController {
       this.fsd*=-1;
     }
     this.fontSize+=this.fsd;
-    console.log(this.fontSize);
+    //console.log(this.fontSize);
     this.collectGarbage();
   }
 

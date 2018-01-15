@@ -63,7 +63,8 @@ class StarModel {
     }
 
     if(this.y > canvas.height) {
-      this.status = 0;
+      this.x = getRandomInt(0, canvas.width*0.9);
+      this.y = -1 * getRandomInt(0, 1000);
     }
   }
 

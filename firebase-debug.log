@@ -1,28 +1,397 @@
-[debug] [2017-12-03T02:24:19.423Z] ----------------------------------------------------------------------
-[debug] [2017-12-03T02:24:19.423Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-12-03T02:24:19.423Z] CLI Version:   3.15.2
-[debug] [2017-12-03T02:24:19.423Z] Platform:      win32
-[debug] [2017-12-03T02:24:19.423Z] Node Version:  v8.9.1
-[debug] [2017-12-03T02:24:19.423Z] Time:          Sat Dec 02 2017 21:24:19 GMT-0500 (Eastern Standard Time)
-[debug] [2017-12-03T02:24:19.423Z] ----------------------------------------------------------------------
+[debug] [2017-12-05T20:40:46.893Z] ----------------------------------------------------------------------
+[debug] [2017-12-05T20:40:46.893Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-05T20:40:46.893Z] CLI Version:   3.16.0
+[debug] [2017-12-05T20:40:46.893Z] Platform:      win32
+[debug] [2017-12-05T20:40:46.893Z] Node Version:  v8.9.1
+[debug] [2017-12-05T20:40:46.893Z] Time:          Tue Dec 05 2017 15:40:46 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:46.893Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-12-03T02:24:19.454Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-12-03T02:24:19.454Z] > authorizing via signed-in user
-[debug] [2017-12-03T02:24:19.470Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
- Sat Dec 02 2017 21:24:19 GMT-0500 (Eastern Standard Time)
-[debug] [2017-12-03T02:24:19.855Z] <<< HTTP RESPONSE 200
-[debug] [2017-12-03T02:24:19.871Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
- Sat Dec 02 2017 21:24:19 GMT-0500 (Eastern Standard Time)
-[debug] [2017-12-03T02:24:20.270Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-05T20:40:46.924Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-05T20:40:46.924Z] > authorizing via signed-in user
+[debug] [2017-12-05T20:40:46.924Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-05T20:40:46.924Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Dec 05 2017 15:40:46 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:47.129Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-05T20:40:47.137Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Tue Dec 05 2017 15:40:47 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:47.477Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-05T20:40:47.477Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Tue Dec 05 2017 15:40:47 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:47.998Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
 [info] 
-[debug] [2017-12-03T02:24:20.286Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
- Sat Dec 02 2017 21:24:20 GMT-0500 (Eastern Standard Time)
-[debug] [2017-12-03T02:24:20.603Z] <<< HTTP RESPONSE 200
-[debug] [2017-12-03T02:24:20.604Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
- Sat Dec 02 2017 21:24:20 GMT-0500 (Eastern Standard Time)
-[debug] [2017-12-03T02:24:20.987Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-05T20:40:48.010Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Tue Dec 05 2017 15:40:48 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:48.279Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-05T20:40:48.294Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Tue Dec 05 2017 15:40:48 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-05T20:40:48.678Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2017-12-06T21:07:04.782Z] ----------------------------------------------------------------------
+[debug] [2017-12-06T21:07:04.782Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-06T21:07:04.782Z] CLI Version:   3.16.0
+[debug] [2017-12-06T21:07:04.782Z] Platform:      win32
+[debug] [2017-12-06T21:07:04.782Z] Node Version:  v8.9.1
+[debug] [2017-12-06T21:07:04.782Z] Time:          Wed Dec 06 2017 16:07:04 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:04.782Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-06T21:07:04.798Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-06T21:07:04.798Z] > authorizing via signed-in user
+[debug] [2017-12-06T21:07:04.815Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-06T21:07:04.815Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Dec 06 2017 16:07:04 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:04.967Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T21:07:04.982Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Wed Dec 06 2017 16:07:04 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:05.519Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T21:07:05.519Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Wed Dec 06 2017 16:07:05 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:05.935Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-06T21:07:05.935Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Wed Dec 06 2017 16:07:05 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:06.235Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T21:07:06.250Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Wed Dec 06 2017 16:07:06 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-06T21:07:06.735Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2017-12-07T14:57:44.900Z] ----------------------------------------------------------------------
+[debug] [2017-12-07T14:57:44.903Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-07T14:57:44.903Z] CLI Version:   3.16.0
+[debug] [2017-12-07T14:57:44.904Z] Platform:      win32
+[debug] [2017-12-07T14:57:44.904Z] Node Version:  v8.9.1
+[debug] [2017-12-07T14:57:44.904Z] Time:          Thu Dec 07 2017 09:57:44 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:44.904Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-07T14:57:44.937Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-07T14:57:44.937Z] > authorizing via signed-in user
+[debug] [2017-12-07T14:57:44.941Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-07T14:57:44.941Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Dec 07 2017 09:57:44 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:45.120Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-07T14:57:45.136Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Thu Dec 07 2017 09:57:45 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:45.536Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-07T14:57:45.536Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Thu Dec 07 2017 09:57:45 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:46.101Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-07T14:57:46.107Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Thu Dec 07 2017 09:57:46 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:46.384Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-07T14:57:46.384Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Thu Dec 07 2017 09:57:46 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-07T14:57:46.706Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2017-12-22T03:50:13.524Z] ----------------------------------------------------------------------
+[debug] [2017-12-22T03:50:13.526Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-22T03:50:13.526Z] CLI Version:   3.16.0
+[debug] [2017-12-22T03:50:13.526Z] Platform:      win32
+[debug] [2017-12-22T03:50:13.527Z] Node Version:  v8.9.1
+[debug] [2017-12-22T03:50:13.527Z] Time:          Thu Dec 21 2017 22:50:13 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:13.527Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-22T03:50:13.554Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-22T03:50:13.554Z] > authorizing via signed-in user
+[debug] [2017-12-22T03:50:13.556Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-22T03:50:13.557Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Dec 21 2017 22:50:13 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:13.930Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-22T03:50:13.945Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Thu Dec 21 2017 22:50:13 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:14.591Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-22T03:50:14.593Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Thu Dec 21 2017 22:50:14 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:15.409Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-22T03:50:15.420Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Thu Dec 21 2017 22:50:15 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:16.227Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-22T03:50:16.231Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Thu Dec 21 2017 22:50:16 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-22T03:50:17.047Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2017-12-30T15:50:47.168Z] ----------------------------------------------------------------------
+[debug] [2017-12-30T15:50:47.168Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-30T15:50:47.183Z] CLI Version:   3.16.0
+[debug] [2017-12-30T15:50:47.183Z] Platform:      win32
+[debug] [2017-12-30T15:50:47.183Z] Node Version:  v8.9.1
+[debug] [2017-12-30T15:50:47.183Z] Time:          Sat Dec 30 2017 10:50:47 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:47.183Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-30T15:50:47.199Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-30T15:50:47.199Z] > authorizing via signed-in user
+[debug] [2017-12-30T15:50:47.199Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-30T15:50:47.199Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Dec 30 2017 10:50:47 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:47.527Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:50:47.527Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:50:47 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:48.137Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:50:48.152Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Sat Dec 30 2017 10:50:48 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:48.668Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-30T15:50:48.668Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:50:48 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:49.105Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:50:49.105Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Sat Dec 30 2017 10:50:49 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:50:49.763Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2017-12-30T15:54:36.884Z] ----------------------------------------------------------------------
+[debug] [2017-12-30T15:54:36.884Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-30T15:54:36.884Z] CLI Version:   3.16.0
+[debug] [2017-12-30T15:54:36.884Z] Platform:      win32
+[debug] [2017-12-30T15:54:36.884Z] Node Version:  v8.9.1
+[debug] [2017-12-30T15:54:36.884Z] Time:          Sat Dec 30 2017 10:54:36 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:54:36.884Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-30T15:54:36.915Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-30T15:54:36.915Z] > authorizing via signed-in user
+[debug] [2017-12-30T15:54:36.915Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:54:36 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:54:37.431Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:54:37.431Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Sat Dec 30 2017 10:54:37 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:54:38.103Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-30T15:54:38.103Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:54:38 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:54:38.540Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:54:38.540Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Sat Dec 30 2017 10:54:38 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:54:39.025Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2017-12-30T15:55:30.263Z] ----------------------------------------------------------------------
+[debug] [2017-12-30T15:55:30.263Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-30T15:55:30.263Z] CLI Version:   3.16.0
+[debug] [2017-12-30T15:55:30.263Z] Platform:      win32
+[debug] [2017-12-30T15:55:30.263Z] Node Version:  v8.9.1
+[debug] [2017-12-30T15:55:30.279Z] Time:          Sat Dec 30 2017 10:55:30 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:55:30.279Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-30T15:55:30.310Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-30T15:55:30.310Z] > authorizing via signed-in user
+[debug] [2017-12-30T15:55:30.310Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:55:30 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:55:30.935Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:55:30.935Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Sat Dec 30 2017 10:55:30 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:55:31.577Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-30T15:55:31.624Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 10:55:31 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:55:31.983Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T15:55:31.983Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Sat Dec 30 2017 10:55:31 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T15:55:32.577Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2017-12-30T17:15:23.221Z] ----------------------------------------------------------------------
+[debug] [2017-12-30T17:15:23.221Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-30T17:15:23.221Z] CLI Version:   3.16.0
+[debug] [2017-12-30T17:15:23.221Z] Platform:      win32
+[debug] [2017-12-30T17:15:23.221Z] Node Version:  v8.9.1
+[debug] [2017-12-30T17:15:23.221Z] Time:          Sat Dec 30 2017 12:15:23 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:23.221Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-30T17:15:23.236Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-30T17:15:23.236Z] > authorizing via signed-in user
+[debug] [2017-12-30T17:15:23.236Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-30T17:15:23.236Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Dec 30 2017 12:15:23 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:23.604Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T17:15:23.618Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 12:15:23 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:24.193Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T17:15:24.193Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Sat Dec 30 2017 12:15:24 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:24.715Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2017-12-30T17:15:24.715Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Sat Dec 30 2017 12:15:24 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:25.121Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-30T17:15:25.121Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Sat Dec 30 2017 12:15:25 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-30T17:15:25.574Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-01-09T02:38:25.294Z] ----------------------------------------------------------------------
+[debug] [2018-01-09T02:38:25.309Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-09T02:38:25.309Z] CLI Version:   3.16.0
+[debug] [2018-01-09T02:38:25.309Z] Platform:      win32
+[debug] [2018-01-09T02:38:25.309Z] Node Version:  v8.9.1
+[debug] [2018-01-09T02:38:25.309Z] Time:          Mon Jan 08 2018 21:38:25 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:25.309Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-09T02:38:25.377Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-09T02:38:25.377Z] > authorizing via signed-in user
+[debug] [2018-01-09T02:38:25.381Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-09T02:38:25.381Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jan 08 2018 21:38:25 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:25.698Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-09T02:38:25.713Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Mon Jan 08 2018 21:38:25 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:26.264Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-09T02:38:26.264Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Mon Jan 08 2018 21:38:26 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:26.762Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2018-01-09T02:38:26.762Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Mon Jan 08 2018 21:38:26 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:27.074Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-09T02:38:27.074Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Mon Jan 08 2018 21:38:27 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-09T02:38:27.477Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] Shutting down...
+[debug] [2018-01-15T21:54:47.398Z] ----------------------------------------------------------------------
+[debug] [2018-01-15T21:54:47.401Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jackson\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-15T21:54:47.401Z] CLI Version:   3.16.0
+[debug] [2018-01-15T21:54:47.401Z] Platform:      win32
+[debug] [2018-01-15T21:54:47.401Z] Node Version:  v8.9.1
+[debug] [2018-01-15T21:54:47.402Z] Time:          Mon Jan 15 2018 16:54:47 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:47.402Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-15T21:54:47.457Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-15T21:54:47.458Z] > authorizing via signed-in user
+[debug] [2018-01-15T21:54:47.463Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-15T21:54:47.464Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/29ZWz9ps2YKJo0wEl9ggH0yRYZjU-roONApoVUd9bN8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jan 15 2018 16:54:47 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:47.741Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T21:54:47.759Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/myportal-d3b10  
+  
+ Mon Jan 15 2018 16:54:47 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:48.113Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T21:54:48.115Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/myportal-d3b10/tokens  
+  
+ Mon Jan 15 2018 16:54:48 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:48.683Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jackson\Desktop\Programming\SpaceWars'...
+[info] 
+[debug] [2018-01-15T21:54:48.694Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/myportal-d3b10  
+  
+ Mon Jan 15 2018 16:54:48 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:49.091Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T21:54:49.092Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/357058346963/clients/_:getWebAppConfig  
+  
+ Mon Jan 15 2018 16:54:49 GMT-0500 (Eastern Standard Time)
+[debug] [2018-01-15T21:54:49.706Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 

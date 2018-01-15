@@ -11,6 +11,12 @@ class Sniper {
     this.view = new SniperView(this.model.width, this.model.height, this.model.missHeight);
   }
 }
+class FlagShip {
+  constructor(playerM) {
+    this.model = new FlagShipModel(getRandomInt(0, canvas.width * 0.7), 0, playerM);
+    this.view = new FlagShipView(this.model.width, this.model.height);
+  }
+}
 class Meteor {
   constructor() {
     this.model = new MeteorModel(getRandomInt(0, canvas.width*0.9), -1*getRandomInt(100, 500),
@@ -58,11 +64,13 @@ class GameController {
     this.playerM = new PlayerModel(canvas.width/2, canvas.height/2);
     this.playerV = new PlayerView(this.playerM.width, this.playerM.height);
     this.hud = new Hud();
+    this.levelController = new LevelController();
     this.enemies = [];
     this.meteors = [];
     this.powerUps = [];
     this.stars = [];
-    while (this.stars.length < 100) {
+    // TODO un hard code this value
+    while (this.stars.length < 50) {
       this.spawnStars(100, true);
     }
     this.explosions = [];
@@ -70,37 +78,47 @@ class GameController {
         let code = e.keyCode;
         switch (code) {
             case 37:
-              //console.log("left");
-              this.playerM.left = true;
-              break; //Left key
+              //console.log("strafeLeft");
+              this.playerM.strafeLeft = true;
+              break; //strafeLeft key
             case 38:
-              //console.log("up");
-              this.playerM.up = true;
-              break; //Up key
+              //console.log("forward");
+              this.playerM.forward = true;
+              break; //forward key
             case 39:
-              //console.log("Right");
-              this.playerM.right = true;
-              break; //Right key
+              //console.log("strafeRight");
+              this.playerM.strafeRight = true;
+              break; //strafeRight key
             case 40:
-              //console.log("Down");
-              this.playerM.down = true;
-              break; //Down key
+              //console.log("backward");
+              this.playerM.backward = true;
+              break; //backward key
             case 87:
               //console.log("W");
-              this.playerM.up = true;
+              this.playerM.forward = true;
               break; //W key
             case 65:
               //console.log("A");
-              this.playerM.left = true;
+              //this.playerM.strafeLeft = true;
+              this.playerM.rotateLeft = true;
               break; //A key
             case 83:
               //console.log("S");
-              this.playerM.down = true;
+              this.playerM.backward = true;
               break; //S key
             case 68:
               //console.log("D");
-              this.playerM.right = true;
+              //this.playerM.strafeRight = true;
+              this.playerM.rotateRight = true;
               break; //D key
+            case 81:
+              // console.log("Q");
+              this.playerM.strafeLeft = true;
+              break;
+            case 69:
+              // console.log("E");
+              this.playerM.strafeRight = true;
+              break;
             case 32:
               //console.log("space");
               this.playerM.fire = true;
@@ -113,37 +131,47 @@ class GameController {
         let code = e.keyCode;
         switch (code) {
             case 37:
-              //console.log("left");
-              this.playerM.left = false;
-              break; //Left key
+              //console.log("strafeLeft");
+              this.playerM.strafeLeft = false;
+              break; //strafeLeft key
             case 38:
-              //console.log("up");
-              this.playerM.up = false;
-              break; //Up key
+              //console.log("forward");
+              this.playerM.forward = false;
+              break; //forward key
             case 39:
-              //console.log("Right");
-              this.playerM.right = false;
-              break; //Right key
+              //console.log("strafeRight");
+              this.playerM.strafeRight = false;
+              break; //strafeRight key
             case 40:
-              //console.log("Down");
-              this.playerM.down = false;
-              break; //Down key
+              //console.log("backward");
+              this.playerM.backward = false;
+              break; //backward key
             case 87:
               //console.log("W");
-              this.playerM.up = false;
+              this.playerM.forward = false;
               break; //W key
             case 65:
               //console.log("A");
-              this.playerM.left = false;
+              //this.playerM.strafeLeft = false;
+              this.playerM.rotateLeft = false;
               break; //A key
             case 83:
               //console.log("S");
-              this.playerM.down = false;
+              this.playerM.backward = false;
               break; //S key
             case 68:
               //console.log("D");
-              this.playerM.right = false;
+              //this.playerM.strafeRight = false;
+              this.playerM.rotateRight = false;
               break; //D key
+            case 81:
+              // console.log("Q");
+              this.playerM.strafeLeft = false;
+              break;
+            case 69:
+              // console.log("E");
+              this.playerM.strafeRight = false;
+              break;
             case 32:
               //console.log("space");
               this.playerM.fire = false;
@@ -170,23 +198,25 @@ class GameController {
   }
 
   spawnEnemies() {
-    if(this.enemies.length < 10) {
-      //console.log("new enemy");
-      //this.enemies.push(new Enemy());
-      if(KILLS > 20) {
-        if(Math.random() > 0.8) {
-          this.enemies.push(new Sniper(this.playerM));
-        } else {
-          this.enemies.push(new Enemy());
-        }
-      } else {
-        this.enemies.push(new Enemy());
+    if(this.enemies.length < this.levelController.numberOfEnenemies) {
+      let diceRoll = Math.random();
+      if(diceRoll > this.levelController.flagShipSpawnRate &&
+        this.levelController.difficulty > 15) {
+          this.enemies.push(new FlagShip(this.playerM));
+      } else if(diceRoll > this.levelController.sniperSpawnRate &&
+        this.levelController.difficulty > 5) {
+        this.enemies.push(new Sniper(this.playerM));
+      } else if(diceRoll > this.levelController.basicSpawnRate &&
+        this.levelController.difficulty > 0) {
+        this.enemies.push(new Enemy(this.playerM));
       }
+      console.log('diceRoll: ', diceRoll, this.levelController.basicSpawnRate,
+      this.levelController.sniperSpawnRate, this.levelController.flagShipSpawnRate);
     }
   }
 
   spawnStars(type, atVeryStart) {
-    if(this.stars.length < 100) {
+    if(this.stars.length < 50) {
       //console.log("new star");
       this.stars.push(new Star(type, atVeryStart));
     }
@@ -238,7 +268,7 @@ class GameController {
         newEx.push(ex);
       }
     });
-    this.powerUps = newPow;
+    this.powerups = newPow;
     this.meteors = newMet;
     this.enemies = newE;
     this.stars = newS;
@@ -254,6 +284,7 @@ class GameController {
 
     if(this.playerM.health > 0) {
       this.playerM.update();
+      this.levelController.update();
       this.spawnEnemies();
       this.spawnStars(0, false);
       this.spawnMeteors();
@@ -262,7 +293,7 @@ class GameController {
       });
       this.stars.forEach((s)=> {
         s.model.update();
-      })
+      });
       this.meteors.forEach((m) => {
         m.model.update();
       });
@@ -287,7 +318,7 @@ class GameController {
   render() {
     this.hud.render(this.playerM.shield, this.playerM.health, SCORE);
     ctx.globalCompositeOperation="destination-over";
-    this.playerV.render(this.playerM.x, this.playerM.y, this.playerM.missiles);
+    this.playerV.render(this.playerM.x, this.playerM.y, this.playerM.missiles, this.playerM.angle);
     this.enemies.forEach((e)=> {
       e.view.render(e.model.x, e.model.y, e.model.missiles);
     });
@@ -328,9 +359,8 @@ class GameController {
       });
       this.playerM.missiles.forEach((m) => {
         if(e.model.status && m.status && this.isCollided(e.model, m)) {
-          e.model.status = 0;
+          e.model.updateHealth();
           m.status = 0;
-          KILLS++;
           this.explosions.push(new Explosion(e.model.x, e.model.y, 2));
         }
       });

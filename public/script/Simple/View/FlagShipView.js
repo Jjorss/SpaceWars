@@ -1,11 +1,10 @@
-class SniperView  {
-  constructor(width, height, missHeight) {
+class FlagShipView  {
+  constructor(width, height) {
     this.img = new Image();
     this.img.src="../PNG/Enemies/enemyBlack1.png";
     this.width = width;
     this.height = height;
-    //console.log(this.width, this.height);
-    this.missileV = new EMissileView(this.width, this.height);
+    this.missileV = new EMissileView(this.width * 0.1, this.height);
   }
 
   render(x, y, missiles){

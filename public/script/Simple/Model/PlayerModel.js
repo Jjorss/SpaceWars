@@ -7,22 +7,28 @@ class PlayerModel {
     this.width = canvas.height * 0.07 * SCALE;
     this.height = canvas.height*0.07 * SCALE;
     this.status = 1;
-    this.left = false;
-    this.right = false;
-    this.up = false;
-    this.down = false;
+    this.strafeLeft = false;
+    this.strafeRight = false;
+    this.rotateLeft = false;
+    this.rotateRight = false;
+    this.forward = false;
+    this.backward = false;
     this.fire = false;
     this.canFire = true;
+    this.angle = 0;
     this.missiles = [];
     this.health = 3;
     this.shield = 100;
+    this.speed = canvas.height * 0.02 * SCALE;
+    this.currentDx = 0;
+    this.currentDy = 0
   }
 
 
   spawnMissile() {
     if(this.fire && this.canFire) {
       this.canFire = false;
-      this.missiles.push(new MissileModel(this.x, this.y));
+      this.missiles.push(new MissileModel(this.x, this.y, this.currentDx, this.currentDy, true));
     }
   }
 
@@ -34,7 +40,7 @@ class PlayerModel {
       m.update();
     });
     this.collectGarbage();
-    //console.log("updating");
+    //console.log("forwarddating");
   }
 
   borderDetection() {
@@ -51,17 +57,46 @@ class PlayerModel {
 
 
   moveShip() {
-    //console.log(this.left, this.up, this.down, this.right);
-    if (this.left) {
+    //console.log(this.strafeLeft, this.forward, this.backward, this.strafeRight);
+    this.simpleMove();
+  }
+
+  simpleMove() {
+    if (this.rotateLeft) {
       this.x -= this.dx;
     }
-    if (this.up) {
+    if (this.forward) {
       this.y += this.dy;
     }
-    if (this.down) {
+    if (this.backward) {
       this.y -= this.dy;
     }
-    if (this.right) {
+    if (this.rotateRight) {
+      this.x += this.dx;
+    }
+  }
+
+  advancedMove() {
+    this.currentDx = Math.cos((this.angle-90) * Math.PI / 180);
+    this.currentDy = Math.sin((this.angle-90) * Math.PI / 180);
+    if (this.rotateRight) {
+      this.angle+=20;
+    }
+    if (this.rotateLeft) {
+      this.angle-=20;
+    }
+    if (this.strafeLeft) {
+      this.x -= this.dx;
+    }
+    if (this.forward) {
+      this.x += this.speed * this.currentDx;
+      this.y += this.speed * this.currentDy;
+    }
+    if (this.backward) {
+      this.x -= this.speed * this.currentDx;
+      this.y -= this.speed * this.currentDy;
+    }
+    if (this.strafeRight) {
       this.x += this.dx;
     }
   }
